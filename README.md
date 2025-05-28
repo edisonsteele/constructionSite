@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ruis Holding Website
 
-## Getting Started
+A modern, responsive website for Ruis Holding, built with Next.js and Tailwind CSS.
 
-First, run the development server:
+## Features
 
+- Responsive design optimized for all devices
+- Modern UI with smooth animations
+- SEO-friendly with static site generation
+- Accessible navigation and content
+- Contact form for inquiries
+- Project showcase with filtering
+- Privacy Policy and Terms & Conditions pages
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- ESLint
+- Prettier
+
+## Development Setup
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd ruiy
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment to Vercel
 
-## Deploy on Vercel
+1. Push your Next.js project to a GitHub/GitLab/Bitbucket repository.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Connect your repository to Vercel:
+   - Go to [Vercel](https://vercel.com)
+   - Create a new project
+   - Import your repository
+   - Vercel will automatically detect it as a Next.js project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Configure your project:
+   - Set the framework preset to Next.js
+   - Add any environment variables if needed
+   - Deploy!
+
+## Project Structure
+
+```
+ruiy/
+├── src/
+│   ├── app/              # App router pages
+│   ├── components/       # Reusable components
+│   └── styles/          # Global styles
+├── public/
+│   └── images/          # Static images
+├── tailwind.config.ts   # Tailwind configuration
+└── package.json         # Project dependencies
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+Ruis Holding
+501 West Center Street
+Kalispell, MT 59901

@@ -1,103 +1,143 @@
 import Image from "next/image";
+import Link from "next/link";
+import ProjectCard from "@/components/ProjectCard";
+import FadeInSection from "@/components/FadeInSection";
+
+export const metadata = {
+  title: "Ruis Holdings - Creating Legacy in Montana & California",
+  description: "Ruis Holdings specializes in construction, development, and rental properties in Montana and California. Discover our featured projects and legacy.",
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredProjects = [
+    {
+      imageUrl: '/images/montana-project.jpg',
+      title: 'Peregrine Subdivision',
+      shortDescription: 'A premier residential development in Montana featuring luxury homes and modern amenities.',
+      locationTag: 'Montana' as const,
+      href: '/projects/montana/peregrine',
+    },
+    {
+      imageUrl: '/images/silos-living.jpg',
+      title: 'Silos Living',
+      shortDescription: 'Modern living spaces in the heart of Kalispell, Montana.',
+      locationTag: 'Montana' as const,
+      statusTag: 'NOW LEASING!',
+      href: '/projects/silos-living',
+    },
+    {
+      imageUrl: '/images/california-project.jpg',
+      title: 'California Development',
+      shortDescription: 'Premium commercial and residential properties in prime California locations.',
+      locationTag: 'California' as const,
+      href: '/projects/california',
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      {/* Hero Section */}
+      <FadeInSection className="relative h-screen">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero.jpg"
+            alt="Ruis Holding - Creating Legacy"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        
+        <div className="relative h-full flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Ruis Holdings
+              </h1>
+              <p className="text-2xl md:text-3xl text-white mb-8">
+                Creating Legacy
+              </p>
+              <p className="text-xl text-white mb-8">
+                Specializing in construction, development, and rental properties<br />
+                in Montana and California.
+              </p>
+              <Link
+                href="/construction"
+                className="btn-primary"
+              >
+                Explore Our Projects
+              </Link>
+            </div>
+          </div>
+        </div>
+      </FadeInSection>
+
+      {/* Overview Section */}
+      <FadeInSection className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-primary mb-4">Construction</h2>
+              <p className="text-gray-600">
+                Quality craftsmanship and attention to detail in every project we undertake.
+              </p>
+            </div>
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-primary mb-4">Development</h2>
+              <p className="text-gray-600">
+                Creating lasting value through strategic real estate development.
+              </p>
+            </div>
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-primary mb-4">Properties</h2>
+              <p className="text-gray-600">
+                Premium rental properties in prime locations across Montana and California.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeInSection>
+
+      {/* Featured Projects Section */}
+      <FadeInSection className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-primary mb-12">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project, index) => (
+              <FadeInSection
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-2">{project.title}</h3>
+                    <p className="text-gray-600 mb-4">{project.shortDescription}</p>
+                  </div>
+                  <div className="mt-4 pt-2 flex items-end min-h-[44px]">
+                    <Link
+                      href={project.href}
+                      className="inline-block text-primary font-semibold hover:text-primary-dark transition-colors duration-200 border border-primary rounded px-4 py-2"
+                    >
+                      Learn More →
+                    </Link>
+                  </div>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </FadeInSection>
+    </>
   );
 }
