@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  images: {
+    domains: ['images.unsplash.com'],
+    unoptimized: true,
+  },
+  output: 'standalone',
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig; 
