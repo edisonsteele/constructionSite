@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import Head from 'next/head';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,8 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ruis Holding - Creating Legacy",
-  description: "Ruis Holding specializes in construction, development, and rental properties in Montana and California.",
+  title: "Ruis Holdings - Creating Legacy",
+  description: "Ruis Holdings specializes in construction, development, and rental properties in Montana and California.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -22,11 +24,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <title>Ruis Holdings</title>
-        <meta name="description" content="Ruis Holdings - Construction, Development, and Properties in Montana and California." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col bg-gray-50">
           <NavBar />
