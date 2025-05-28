@@ -50,7 +50,7 @@ export default function TeamPage() {
                 Ruis Holding
               </h1>
               <p className="text-2xl text-white mb-8">
-                Investing in Real Estate to Create Lasting Value
+                The people behind our success
               </p>
             </div>
           </div>
